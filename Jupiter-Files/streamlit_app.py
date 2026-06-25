@@ -14,7 +14,7 @@ FEATURE_COLUMNS_PATH = APP_DIR / "feature_columns.pkl"
 
 MODEL_R2 = 0.8138
 MODEL_MAE = 1.1804
-SCHOOL_NAME = "એમ. એમ. કરોડિયા પ્રાથમિક શાળા, તરસાડી, કોસંબા"
+SCHOOL_NAME = "એમ. એમ. કરોડિયા પ્રાથમિક શાળા, તરસાડી કોસંબા (R.S)"
 MENTOR_NAME = "મનોજભાઈ પરમાર"
 FORMAL_SUBTITLE = "AI આધારિત વિદ્યાર્થી પ્રદર્શન આગાહી અને વ્યક્તિગત માર્ગદર્શન પ્રણાલી"
 
@@ -589,7 +589,7 @@ def render_results(student_name: str, standard: str, values: dict) -> None:
                 unsafe_allow_html=True,
             )
 
-    section_title("🧠", "Student AI Report", "શિક્ષક, વિદ્યાર્થી અથવા science fair presentation માટે તૈયાર સંક્ષિપ્ત રિપોર્ટ.")
+    section_title("🧠", "Student AI Report", "શિક્ષક અને વિદ્યાર્થી માટે તૈયાર સંક્ષિપ્ત રિપોર્ટ.")
     st.markdown(
         f"""
         <div class="report-card">
