@@ -620,7 +620,7 @@ def main() -> None:
     with st.container(border=False):
         col_1, col_2 = st.columns([1.3, 0.8])
         with col_1:
-            student_name = st.text_input("વિદ્યાર્થીનું નામ", placeholder="ઉદાહરણ: આરવ પટેલ")
+            student_name = st.text_input("વિદ્યાર્થીનું નામ", placeholder="તમારું પૂરું નામ લખો.")
         with col_2:
             standard = st.selectbox("ધોરણ / Class", ["6", "7", "8"], index=2)
 
