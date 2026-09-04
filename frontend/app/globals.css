@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Space & AI Cosmic Variables */
+html.dark {
+  --bg-space: #020617;
+  --panel-bg: rgba(8, 18, 38, 0.78);
+  --panel-border: rgba(56, 189, 248, 0.25);
+  --panel-glow: 0 0 35px rgba(6, 182, 212, 0.15);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-cyan: #00f2fe;
+  --accent-purple: #9d4edd;
+  --hud-line: rgba(56, 189, 248, 0.18);
+  --input-bg: rgba(15, 23, 42, 0.75);
+  --input-border: rgba(56, 189, 248, 0.3);
+}
+
+html.light {
+  --bg-space: #f1f5f9;
+  --panel-bg: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(203, 213, 225, 0.95);
+  --panel-glow: 0 12px 36px rgba(15, 23, 42, 0.08);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --accent-cyan: #0284c7;
+  --accent-purple: #7c3aed;
+  --hud-line: rgba(2, 132, 199, 0.15);
+  --input-bg: rgba(248, 250, 252, 0.98);
+  --input-border: rgba(203, 213, 225, 1);
+}
+
+body {
+  font-family: 'Anek Gujarati', 'Noto Sans Gujarati', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-space);
+  color: var(--text-main);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Cosmic Nebula Background Effect in Dark Mode */
+html.dark body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 80% 15%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(236, 72, 153, 0.10) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Starfield Grid */
+html.dark body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    radial-gradient(rgba(56, 189, 248, 0.12) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  background-position: 0 0, 25px 25px;
+  opacity: 0.65;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Celestial Solar Light Mode Background */
+html.light body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 85% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #e2e8f0 100%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Futuristic HUD Panel */
+.hud-panel,
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--panel-border);
+  box-shadow: var(--panel-glow);
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.hud-panel::before,
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0.7;
+}
+
+/* Custom Futuristic Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  height: 8px;
+  outline: none;
+}
+
+html.light input[type="range"] {
+  background: rgba(148, 163, 184, 0.35);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #00f2fe;
+  border: 3px solid #030712;
+  box-shadow: 0 0 14px #00f2fe;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+html.light input[type="range"]::-webkit-slider-thumb {
+  background: #2563eb;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 22px #00f2fe;
+}
+
+html.light input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.6);
+}
+
+/* Print CSS - High Quality Single-Page A4 Certificate */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  /* 1. Hide the entire site tree except the certificate modal portal */
+  body > *:not(#official-certificate-modal-root) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 2. Reset base html & body */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 3. Make modal root unconstrained */
+  #official-certificate-modal-root {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* 4. Hide all screen-only UI elements */
+  .no-print,
+  button,
+  header,
+  footer,
+  nav {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 5. Format Certificate Sheet for pristine single-page print */
+  .certificate-print-sheet {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 16px 20px !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    border: 2px solid #0f172a !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Remove glowing top pseudo-lines in print */
+  .certificate-print-sheet::before {
+    display: none !important;
+  }
+
+  /* Ensure deep contrast for all text in print */
+  .certificate-print-sheet * {
+    color: #0f172a !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  .certificate-print-sheet .text-blue-700,
+  .certificate-print-sheet .text-blue-600,
+  .certificate-print-sheet .text-cyan-400,
+  .certificate-print-sheet .text-cyan-300 {
+    color: #1d4ed8 !important;
+  }
+
+  .certificate-print-sheet .bg-slate-50,
+  .certificate-print-sheet .bg-slate-100 {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+  }
+}
+
