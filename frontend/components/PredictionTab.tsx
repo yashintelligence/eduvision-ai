@@ -448,7 +448,7 @@ export const PredictionTab: React.FC<PredictionTabProps> = ({
                   {currentResult.student_name} નો સત્તાવાર શૈક્ષણિક રિપોર્ટ તૈયાર છે!
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5 font-medium">
-                  વિજ્ઞાન મેળાનું સત્તાવાર શૈક્ષણિક પ્રમાણપત્ર શાળા અને માર્ગદર્શકની સહી સાથે પ્રિન્ટ / PDF ડાઉનલોડ કરો.
+                  વિજ્ઞાન મેળાનું સત્તાવાર શૈક્ષણિક પ્રમાણપત્ર પ્રિન્ટ / PDF ડાઉનલોડ કરો.
                 </p>
               </div>
             </div>

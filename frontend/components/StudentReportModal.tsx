@@ -173,25 +173,6 @@ export const StudentReportModal: React.FC<StudentReportModalProps> = ({
               ))}
             </div>
           </div>
-
-          {/* Signatures Row */}
-          <div className="pt-5 border-t-2 border-slate-200 dark:border-white/15 grid grid-cols-2 gap-8 text-center text-xs">
-            <div className="space-y-2">
-              <div className="h-8 border-b border-dashed border-slate-400 w-40 mx-auto" />
-              <div>
-                <strong className="block text-slate-900 dark:text-white font-bold">{GUJARATI_TEXT.mentorName}</strong>
-                <span className="text-slate-500 dark:text-slate-400 text-[10px]">માર્ગદર્શક શિક્ષક (પ્રોજેક્ટ હેડ)</span>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="h-8 border-b border-dashed border-slate-400 w-40 mx-auto" />
-              <div>
-                <strong className="block text-slate-900 dark:text-white font-bold">{GUJARATI_TEXT.certificate.parentSign}</strong>
-                <span className="text-slate-500 dark:text-slate-400 text-[10px]">વાલીશ્રીની નોંધણી સહી</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

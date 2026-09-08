@@ -2,7 +2,7 @@
 
 import React from "react";
 import { GUJARATI_TEXT } from "@/lib/gujarati";
-import { School, UserCheck, Code, Target, Sparkles } from "lucide-react";
+import { School, UserCheck, Target, Sparkles } from "lucide-react";
 
 export const AboutTab: React.FC = () => {
   return (
@@ -35,8 +35,8 @@ export const AboutTab: React.FC = () => {
         </div>
       </div>
 
-      {/* Grid: School, Mentor, Developer */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      {/* Grid: School, Mentor */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* School */}
         <div className="hud-panel p-6 rounded-3xl border border-slate-200 dark:border-white/10 bg-white/95 dark:bg-slate-950/80 shadow-md space-y-3">
           <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 dark:bg-blue-500/20 dark:text-blue-400 flex items-center justify-center border border-blue-200 dark:border-blue-500/30">
@@ -70,24 +70,6 @@ export const AboutTab: React.FC = () => {
           </div>
           <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
             શિક્ષક અને શૈક્ષણિક પ્રોજેક્ટ માર્ગદર્શક. વિદ્યાર્થીઓના સર્વાંગી વિકાસ અને AI આધારિત શૈક્ષણિક સંશોધનના પ્રણેતા.
-          </p>
-        </div>
-
-        {/* Developer */}
-        <div className="hud-panel p-6 rounded-3xl border border-slate-200 dark:border-white/10 bg-white/95 dark:bg-slate-950/80 shadow-md space-y-3">
-          <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400 flex items-center justify-center border border-emerald-200 dark:border-emerald-500/30">
-            <Code className="w-6 h-6" />
-          </div>
-          <div>
-            <span className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400">
-              {GUJARATI_TEXT.about.developerInfoTitle}
-            </span>
-            <h3 className="text-base font-extrabold text-slate-900 dark:text-white mt-1">
-              યશ પટેલ (Yash Patel)
-            </h3>
-          </div>
-          <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-            B.Sc. Information Technology છાત્ર, Department of ICT, Veer Narmad South Gujarat University (VNSGU), સુરત.
           </p>
         </div>
       </div>

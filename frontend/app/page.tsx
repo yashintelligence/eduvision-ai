@@ -114,8 +114,6 @@ export default function Home() {
             <span className="text-blue-700 dark:text-cyan-300">વિજ્ઞાન મેળો ૨૦૨૬</span>
             <span>•</span>
             <span>માર્ગદર્શક: <strong className="text-slate-900 dark:text-white">{GUJARATI_TEXT.mentorName}</strong></span>
-            <span>•</span>
-            <span>ડેવલપર: <strong className="text-slate-900 dark:text-white">યશ પટેલ</strong></span>
           </div>
           <div className="text-[11px] text-slate-500 dark:text-slate-500 font-medium">
             © ૨૦૨૬ EduVision AI • વિજ્ઞાન મેળો પ્રદર્શન આવૃત્તિ
